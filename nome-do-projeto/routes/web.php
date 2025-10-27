@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 // 1. Importar o Controller de Produto
-use App\Http\Controllers\ProdutoControler;
+use App\Http\Controllers\ProdutoController;
 // (Vamos importar o de Categoria em breve)
 use App\Http\Controllers\CategoriaController;
 
@@ -22,12 +22,12 @@ Route::get('/', function () {
 // 2. Rota GET /produtos [cite: 1451]
 // Quando o usuário acessar /produtos (GET), chama o método index()
 // Demos um nome 'produtos.index' para essa rota.
-Route::get('/produtos', [ProdutoControler::class, 'index'])->name('produtos.index');
+Route::get('/produtos', [ProdutoController::class, 'index'])->name('produtos.index');
 
 // 3. Rota POST /produtos 
 // Quando o formulário for enviado para /produtos (POST), chama o método store()
 // Demos um nome 'produtos.store' (usado no 'action' do formulário).
-Route::post('/produtos', [ProdutoControler::class, 'store'])->name('produtos.store');
+Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
 
 
 /*

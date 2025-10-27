@@ -55,7 +55,7 @@
                 <label for="descricao">Descrição:</label>
                 <textarea id="descricao" name="descricao">{{ old('descricao') }}</textarea>
             </div>
-            <button type="submit">Salvar Produto</button>
+            <button type="submit"   >Salvar Produto</button>
         </form>
     </div>
 
@@ -72,18 +72,17 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($produtos as $produto)
-                    <tr>
-                        <td>{{ $produto->id }}</td>
-                        <td>{{ $produto->nome }}</td>
-                        <td>R$ {{ number_format($produto->preco, 2, ',', '.') }}</td>
-                        <td>{{ $produto->descricao }}</td>
-                    </tr>
-                @empty
-                    <tr>
-                        <td colspan="3">Nenhum produto cadastrado.</td>
-                    </tr>
-                @endforelse
+               @forelse ($categorias as $categoria)
+    <tr>
+        <td>{{ $categoria->id }}</td>
+        <td>{{ $categoria->nome }}</td>
+        <td>{{ $categoria->descricao }}</td>
+    </tr>
+@empty
+    <tr>
+        <td colspan="3">Nenhuma categoria cadastrada.</td>
+    </tr>
+@endforelse
             </tbody>
         </table>
     </div>

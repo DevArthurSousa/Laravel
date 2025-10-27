@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produto; // 1. Precisamos "importar" o Model para usá-lo
 use Illuminate\Http\Request; // 2. Precisamos do Request para pegar os dados do formulário
 
-class ProdutoControler extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Método Index: Exibe o formulário e a lista de produtos.
@@ -16,8 +16,10 @@ class ProdutoControler extends Controller
         // 3. Pega todos os produtos salvos no banco usando o Model
         $produtos = Produto::all();
 
+        // ...
         // 4. Retorna a view e envia a variável $produtos para ela
-        return view('produtos.index', ['produtos' => $produtos]);
+        return view('produtos.index', ['produtos' => $produtos]); // <-- CORRIGIDO
+    
     }
 
     /**
@@ -42,6 +44,7 @@ class ProdutoControler extends Controller
 
         // 7. Redireciona o usuário de volta para a página anterior (o formulário)
         //    com uma mensagem de sucesso.
-        return redirect()->back()->with('sucesso', 'Produto cadastrado com sucesso!');
+        // Código Novo e Corrigido
+return redirect()->route('produtos.index')->with('sucesso', 'Produto cadastrado com sucesso!');
     }
 }

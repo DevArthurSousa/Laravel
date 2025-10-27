@@ -15,8 +15,10 @@ class CategoriaController extends Controller
     {
         $categorias = Categoria::all();
         // Vamos criar essa view no próximo passo
-        return view('categorias.index', ['categorias' => $categorias]);
+            // ...
+        return view('categorias.index', ['categorias' => $categorias]); // <-- CORRIGIDO
     }
+    
 
     /**
      * Salva uma nova categoria no banco.
@@ -34,6 +36,7 @@ class CategoriaController extends Controller
         Categoria::create($request->all());
 
         // Redirecionamento com mensagem
-        return redirect()->back()->with('sucesso', 'Categoria cadastrada com sucesso!');
+        // Código Novo e Corrigido
+        return redirect()->route('categorias.index')->with('sucesso', 'Categoria cadastrada com sucesso!');
     }
 }
