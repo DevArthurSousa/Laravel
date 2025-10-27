@@ -36,7 +36,7 @@ class CategoriaController extends Controller
         Categoria::create($request->all());
 
         // Redirecionamento com mensagem
-        // Código Novo e Corrigido
-        return redirect()->route('categorias.index')->with('sucesso', 'Categoria cadastrada com sucesso!');
+// O CÓDIGO CORRETO:
+return redirect()->route('categorias.index')->with('sucesso', 'Categoria cadastrada com sucesso!');
     }
 }

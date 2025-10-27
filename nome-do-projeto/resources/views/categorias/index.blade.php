@@ -42,21 +42,20 @@
     <div class="form">
         <h2>Cadastrar Novo Produto</h2>
         
-        <form action="{{ route('produtos.store') }}" method="POST">
-            @csrf <div>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" value="{{ old('nome') }}">
-            </div>
-            <div>
-                <label for="preco">Preço:</label>
-                <input type="text" id="preco" name="preco" value="{{ old('preco') }}">
-            </div>
-            <div>
-                <label for="descricao">Descrição:</label>
-                <textarea id="descricao" name="descricao">{{ old('descricao') }}</textarea>
-            </div>
-            <button type="submit"   >Salvar Produto</button>
-        </form>
+       {{-- Em resources/views/categorias/index.blade.php --}}
+<form action="{{ route('categorias.store') }}" method="POST">
+     @csrf
+     {{-- Campos do formulário de categoria --}}
+     <div>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ old('nome') }}">
+    </div>
+    <div>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao">{{ old('descricao') }}</textarea>
+    </div>
+    <button type="submit">Salvar Categoria</button> {{-- Texto do botão atualizado --}}
+</form>
     </div>
 
 

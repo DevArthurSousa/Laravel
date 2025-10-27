@@ -45,6 +45,8 @@ class ProdutoController extends Controller
         // 7. Redireciona o usuário de volta para a página anterior (o formulário)
         //    com uma mensagem de sucesso.
         // Código Novo e Corrigido
+// Código Novo e Corrigido
+// O CÓDIGO CORRETO:
 return redirect()->route('produtos.index')->with('sucesso', 'Produto cadastrado com sucesso!');
     }
 }
